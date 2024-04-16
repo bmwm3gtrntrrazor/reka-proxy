@@ -7,7 +7,7 @@ dotenv.config();
 export const AUTH = process.env.AUTH;
 if (!AUTH) throw new Error("No auth provided");
 
-export const PORT = process.env.PORT ?? 3000;
+export const PORT = process.env.PORT ?? 7860;
 
 export const MODELS = [{ id: "reka-core", object: "model", created: 0, owned_by: "desu" }];
 
