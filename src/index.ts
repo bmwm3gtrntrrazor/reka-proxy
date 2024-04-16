@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import {
   AUTH,
   MODELS,
+  PORT,
   convertOpenAiMessages,
   createChatCompletionObject,
   respondWithError,
@@ -11,7 +12,6 @@ import { generateMessage } from "./reka";
 import async from "async";
 
 const app = express();
-const port = 3000;
 
 type Task = {
   request: Request;
@@ -127,6 +127,6 @@ app.post("/reka/v1/chat/completions", (req, res) => {
   ipMap.set(req.ip, true);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
